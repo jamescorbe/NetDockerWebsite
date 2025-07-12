@@ -2,3 +2,8 @@
 NetDocker/NetDockerWebApp/obj
 NetDocker/UserDatabaseCore/bin
 NetDocker/UserDatabaseCore/obj
+NetDocker/bin
+NetDocker/NetDockerWebApp/bin
+NetDocker/obj
+NetDocker/SignInClient/obj
+NetDocker/SignInClient/bin

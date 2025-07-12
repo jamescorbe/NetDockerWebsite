@@ -1,10 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 using NetDockerWebApp.Components;
+using SignInClient.Interfaces;
+using UserDatabaseCore;
+using WebDevTest_Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+//https://learn.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests
+builder.Services.AddHttpClient<ISigninClient, SigninClient>(httpClient =>
+{
+    httpClient.BaseAddress = new Uri(builder.Configuration.GetValue<string>("RestApiAddress"));
+});
+
+builder.Services.AddMudServices();
+builder.Services.AddDbContext<UserDatabaseContext>(opt => opt.UseSqlServer(DBCreationHelper.CreateUserDatabaseConnectionString()));
 
 var app = builder.Build();
 

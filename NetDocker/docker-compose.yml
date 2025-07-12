@@ -1,0 +1,31 @@
+networks:
+    NetDocker:    
+  
+services:
+  appdatabase:
+    container_name: app-database
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+       - 8002:1433
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=DevTest123
+    networks:
+        - NetDocker
+
+  netdockerwebapp:
+    container_name: web-blazor-app
+    image: ${DOCKER_REGISTRY-}netdockerwebapp
+    build:
+      context: .
+      dockerfile: netdockerwebapp/Dockerfile
+    ports:
+       - 8001:8081
+    depends_on:
+       - appdatabase
+    environment:
+        - DB_HOST=appdatabase
+        - DB_NAME=BlazerServerSideTest
+        - DB_SA_PASSWORD=DevTest123
+    networks:
+        - NetDocker

@@ -1,0 +1,27 @@
+﻿<MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" />
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="MainTheme" />
+@code {
+
+    private bool _isDarkMode;
+    public MudTheme MainTheme = new MudTheme()
+        {
+            PaletteLight = new PaletteLight()
+            {
+                Primary = Colors.Blue.Accent3,
+                Secondary = Colors.LightBlue.Accent1,
+                AppbarBackground = Colors.Red.Default,
+                TextSecondary = Colors.Gray.Darken4,
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.Blue.Lighten1
+            },
+
+            LayoutProperties = new LayoutProperties()
+            {
+                DrawerWidthLeft = "260px",
+                DrawerWidthRight = "300px"
+            }
+        };
+}

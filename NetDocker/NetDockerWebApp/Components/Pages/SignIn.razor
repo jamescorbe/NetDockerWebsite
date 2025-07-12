@@ -1,0 +1,32 @@
+﻿@page "/"
+@inherits BasePage
+@using SignInClient.Interfaces
+@rendermode InteractiveServer
+@inject ISigninClient SignInClient
+<MudThemeProvider Theme="MainTheme" />
+
+
+
+<MudPaper Class=" pa-2 mt-20 d-flex justify-center flex-column flex-grow-1 gap-4 mud-theme-primary" Elevation="3">
+   
+    <PageTitle>Sign in</PageTitle>
+    <MudTextField @bind-Value="_username"  Label=" Username"> </MudTextField>
+    <MudTextField @bind-Value="_password" AdornmentColor="Color.Primary" Label=" Password"> </MudTextField>
+    <MudButton Class="d-flex flex-grow-1 gap-4" OnClick="Login" Variant="Variant.Filled" Color="Color.Secondary">Log In</MudButton>
+</MudPaper>
+
+
+@code {
+    private string _username = string.Empty;
+    private string _password = string.Empty;
+
+    private async Task Login()
+    {
+        var signInValid = await SignInClient.SignInAsync(_username, _password);
+
+        if (signInValid)
+        {
+
+        }
+    }
+}
