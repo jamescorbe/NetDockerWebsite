@@ -7,3 +7,11 @@ NetDocker/NetDockerWebApp/bin
 NetDocker/obj
 NetDocker/SignInClient/obj
 NetDocker/SignInClient/bin
+NetDocker/NetDockerAPI/bin
+NetDocker/NetDockerAPI/obj
+NetDocker/NetDockerApp/.vs
+NetDocker/NetDockerApp/obj/Docker/obj
+NetDocker/NetDockerApp/obj/Debug
+NetDocker/NetDockerApp/bin
+NetDocker/NetDockerApp/obj/Release/net8.0
+NetDocker/NetDockerApp/obj
