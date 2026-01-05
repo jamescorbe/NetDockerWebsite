@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserDatabaseCore", "UserDat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDockerWebApp.Client", "SignInClient\NetDockerWebApp.Client.csproj", "{520F3D76-24C9-4E36-BC69-0460A02A9EBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Dto", "App.Dto\App.Dto.csproj", "{4229E915-662B-4D55-BC18-D75BF2B53234}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{520F3D76-24C9-4E36-BC69-0460A02A9EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{520F3D76-24C9-4E36-BC69-0460A02A9EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{520F3D76-24C9-4E36-BC69-0460A02A9EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4229E915-662B-4D55-BC18-D75BF2B53234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4229E915-662B-4D55-BC18-D75BF2B53234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4229E915-662B-4D55-BC18-D75BF2B53234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4229E915-662B-4D55-BC18-D75BF2B53234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

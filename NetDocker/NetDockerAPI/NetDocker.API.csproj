@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\App.Dto\App.Dto.csproj" />
   </ItemGroup>
 
 </Project>
