@@ -1,0 +1,36 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "docker-compose.dcproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SignInClient\\NetDockerWebApp.Client.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\NetDockerAPI\\NetDocker.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "NetDockerWebApp.csproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "New Profile (1)",
+    "Projects": [
+      {
+        "Path": "docker-compose.dcproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\NetDockerAPI\\NetDocker.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

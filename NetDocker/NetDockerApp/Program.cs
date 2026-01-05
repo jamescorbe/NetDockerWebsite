@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
 using NetDockerWebApp.Components;
 using SignInClient.Interfaces;
-using UserDatabaseCore;
+
 using WebDevTest_Client;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +18,6 @@ builder.Services.AddHttpClient<ISigninClient, SigninClient>(httpClient =>
 });
 
 builder.Services.AddMudServices();
-builder.Services.AddDbContext<UserDatabaseContext>(opt => opt.UseSqlServer(DBCreationHelper.CreateUserDatabaseConnectionString()));
 
 var app = builder.Build();
 
@@ -29,6 +28,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+//https://learn.microsoft.com/en-us/aspnet/core/security/docker-compose-https?view=aspnetcore-8.0
 
 app.UseHttpsRedirection();
 

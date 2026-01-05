@@ -2,6 +2,16 @@ networks:
     NetDocker:    
   
 services:
+  restAPI:
+    build:
+         context: .
+         dockerfile: NetDocker.API/Dockerfile
+    ports:
+       - 8003:1433
+    networks:
+        - NetDocker
+
+
   appdatabase:
     container_name: app-database
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -18,7 +28,7 @@ services:
     image: ${DOCKER_REGISTRY-}netdockerwebapp
     build:
       context: .
-      dockerfile: netdockerwebapp/Dockerfile
+      dockerfile: Dockerfile
     ports:
        - 8001:8081
     depends_on:
@@ -27,5 +37,7 @@ services:
         - DB_HOST=appdatabase
         - DB_NAME=BlazerServerSideTest
         - DB_SA_PASSWORD=DevTest123
+        - ASPNETCORE_Kestrel__Certificates__Default__Password=DEVPW
+        - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     networks:
         - NetDocker
